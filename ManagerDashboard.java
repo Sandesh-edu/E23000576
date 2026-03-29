@@ -12,10 +12,13 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 /**
- * Manager Dashboard with Save/Load functionality
+ * Manager Dashboard for CRS system.
+ * Provides access to staff management, user viewing, trip management, and data persistence.
+ * Allows managers to add staff, view users and trips, and save/load system data.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
+ * @version 1.0
  */
 public class ManagerDashboard extends JFrame implements ActionListener {
     private CRS crs;
@@ -25,6 +28,12 @@ public class ManagerDashboard extends JFrame implements ActionListener {
     JScrollPane scrollPane;
     DefaultTableModel tableModel;
 
+    /**
+     * Constructor for ManagerDashboard.
+     * Initializes the dashboard with navigation buttons and user information table.
+     *
+     * @param crs the CRS system instance
+     */
     ManagerDashboard(CRS crs){
         this.crs = crs;
         setLayout(null);
@@ -97,6 +106,12 @@ public class ManagerDashboard extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    /**
+     * Handles action events from dashboard buttons.
+     * Routes to appropriate functions based on manager's selection.
+     *
+     * @param e the action event triggered by button click
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();

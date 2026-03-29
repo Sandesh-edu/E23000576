@@ -10,7 +10,7 @@ import assignment.CRS;
  * @student_id E2300576
  * @date March 2026
  */
-public class Main {
+public class CRSGUI {
 
     public static void main(String[] args) {
         CRS crs;

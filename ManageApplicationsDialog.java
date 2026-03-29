@@ -8,6 +8,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+/**
+ * Dialog for managing trip applications in the CRS system.
+ * Allows staff to view, accept, and reject volunteer applications for trips.
+ * Displays application details in a table format with filtering by trip.
+ *
+ * @author Sandesh Pokharel
+ * @student_id E2300576
+ * @version 1.0
+ */
 public class ManageApplicationsDialog extends JDialog implements ActionListener{
 
     private CRS crs;
@@ -21,6 +30,14 @@ public class ManageApplicationsDialog extends JDialog implements ActionListener{
     DefaultTableModel tableModel;
     JButton btn_accept, btn_reject, btn_close;
 
+    /**
+     * Constructor for ManageApplicationsDialog.
+     * Initializes the dialog with trip selection and application management table.
+     *
+     * @param parent the parent JFrame
+     * @param crs the CRS system instance
+     * @param trips the list of trips to manage applications for
+     */
     ManageApplicationsDialog(JFrame parent, CRS crs, List<Trip> trips){
         super(parent, "Manage Applications", true);
         this.crs = crs;
@@ -94,6 +111,12 @@ public class ManageApplicationsDialog extends JDialog implements ActionListener{
     }
 
 
+    /**
+     * Handles action events from buttons and combo box.
+     * Processes trip selection, accept, reject, and close actions.
+     *
+     * @param e the action event triggered by user interaction
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -109,6 +132,10 @@ public class ManageApplicationsDialog extends JDialog implements ActionListener{
         }
     }
 
+    /**
+     * Loads and displays applications for the selected trip.
+     * Populates the table with application details.
+     */
     private void loadApplications() {
         int selectedIndex = cmb_trips.getSelectedIndex();
         if (selectedIndex == -1) return;
@@ -133,6 +160,10 @@ public class ManageApplicationsDialog extends JDialog implements ActionListener{
         }
     }
 
+    /**
+     * Handles acceptance of a selected application.
+     * Updates application status and allows entering remarks.
+     */
     private void handleAccept() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {
@@ -170,6 +201,10 @@ public class ManageApplicationsDialog extends JDialog implements ActionListener{
         loadApplications();
     }
 
+    /**
+     * Handles rejection of a selected application.
+     * Updates application status with rejection remarks.
+     */
     private void handleReject() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {

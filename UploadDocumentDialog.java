@@ -7,6 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 
+/**
+ * Dialog for volunteers to upload documents in the CRS system.
+ * Allows selecting document type, expiry date, and file path.
+ * Includes file browser functionality for selecting files.
+ *
+ * @author Sandesh Pokharel
+ * @student_id E2300576
+ * @version 1.0
+ */
 public class UploadDocumentDialog extends JDialog implements ActionListener {
 
     private Volunteer volunteer;
@@ -17,6 +26,13 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
     JCheckBox chk_noExpiry;
     JButton btn_browse, btn_upload, btn_cancel;
 
+    /**
+     * Constructor for UploadDocumentDialog.
+     * Initializes the dialog with document upload controls.
+     *
+     * @param parent the parent JFrame
+     * @param volunteer the volunteer uploading the document
+     */
     UploadDocumentDialog(JFrame parent, Volunteer volunteer){
 
         super(parent, "Upload Document", true);
@@ -89,6 +105,12 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
 
     }
 
+    /**
+     * Handles action events from dialog components.
+     * Processes checkbox selection, file browsing, upload, and cancel actions.
+     *
+     * @param e the action event triggered by user interaction
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -104,6 +126,10 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
         }
     }
 
+    /**
+     * Opens a file chooser dialog for selecting document file.
+     * Updates the file path text field with selected file's absolute path.
+     */
     private void browseFile() {
         JFileChooser fileChooser = new JFileChooser();
         int result = fileChooser.showOpenDialog(this);
@@ -113,6 +139,11 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
         }
     }
 
+    /**
+     * Handles the upload of a document.
+     * Validates document type, expiry date, and file path.
+     * Creates a Document object and adds it to the volunteer's profile.
+     */
     private void handleUpload() {
         Document.DOCType docType = (Document.DOCType) cmb_docType.getSelectedItem();
         String imagePath = txt_path.getText().trim();

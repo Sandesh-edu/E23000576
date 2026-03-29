@@ -7,6 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 
+/**
+ * Dialog for creating new relief trips in the CRS system.
+ * Allows staff members to create trips with description, location, date,
+ * required volunteers, and crisis type.
+ *
+ * @author Sandesh Pokharel
+ * @student_id E2300576
+ * @version 1.0
+ */
 public class CreateTripDialog extends JDialog implements ActionListener{
 
     private CRS crs;
@@ -17,6 +26,14 @@ public class CreateTripDialog extends JDialog implements ActionListener{
     JComboBox<CRS.CrisisType> cmb_crisis;
     JButton btn_create, btn_cancel;
 
+    /**
+     * Constructor for CreateTripDialog.
+     * Initializes the dialog with input fields for trip creation.
+     *
+     * @param parent the parent JFrame
+     * @param crs the CRS system instance
+     * @param staff the staff member creating the trip
+     */
     CreateTripDialog(JFrame parent, CRS crs, Staff staff){
         super(parent, "Create New Trip", true);
         this.crs = crs;
@@ -94,6 +111,12 @@ public class CreateTripDialog extends JDialog implements ActionListener{
         setVisible(true);
     }
 
+    /**
+     * Handles action events from buttons in the dialog.
+     * Processes Create and Cancel button clicks.
+     *
+     * @param e the action event triggered by button click
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -105,6 +128,11 @@ public class CreateTripDialog extends JDialog implements ActionListener{
         }
     }
 
+    /**
+     * Handles the creation of a new relief trip.
+     * Validates input fields and creates the trip in the CRS system.
+     * Performs date, volunteer count, and format validations.
+     */
     private void handleCreateTrip() {
         String description = txt_desc.getText().trim();
         String location = txt_location.getText().trim();

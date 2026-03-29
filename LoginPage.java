@@ -12,10 +12,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Login page for CRS system
+ * Login page for CRS system.
+ * Provides user authentication interface for managers, staff, and volunteers.
+ * Includes role selection and registration link for new volunteers.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
+ * @version 1.0
  */
 public class LoginPage extends JFrame implements ActionListener, MouseListener {
     private static CRS crs;
@@ -34,6 +37,10 @@ public class LoginPage extends JFrame implements ActionListener, MouseListener {
         crs = crsInstance;
     }
 
+    /**
+     * Constructor for LoginPage.
+     * Initializes the login interface with username, password, and role selection.
+     */
     LoginPage() {
         setLayout(null);
         setTitle("Crisis Relief Services - Login");
@@ -98,6 +105,12 @@ public class LoginPage extends JFrame implements ActionListener, MouseListener {
         setVisible(true);
     }
 
+    /**
+     * Handles action events from login and cancel buttons.
+     * Validates credentials and routes to appropriate dashboard.
+     *
+     * @param e the action event triggered by button click
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -160,20 +173,46 @@ public class LoginPage extends JFrame implements ActionListener, MouseListener {
         }
     }
 
+    /**
+     * Handles mouse click events for registration link.
+     * Opens registration frame when clicked.
+     *
+     * @param e the mouse event
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         new RegisterFrame(crs, this);
     }
 
+    /**
+     * Handles mouse pressed event. Not implemented.
+     *
+     * @param e the mouse event
+     */
     @Override
     public void mousePressed(MouseEvent e) {}
 
+    /**
+     * Handles mouse released event. Not implemented.
+     *
+     * @param e the mouse event
+     */
     @Override
     public void mouseReleased(MouseEvent e) {}
 
+    /**
+     * Handles mouse entered event. Not implemented.
+     *
+     * @param e the mouse event
+     */
     @Override
     public void mouseEntered(MouseEvent e) {}
 
+    /**
+     * Handles mouse exited event. Not implemented.
+     *
+     * @param e the mouse event
+     */
     @Override
     public void mouseExited(MouseEvent e) {}
 }

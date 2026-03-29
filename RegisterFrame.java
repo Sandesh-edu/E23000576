@@ -6,6 +6,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Registration frame for creating new volunteer accounts in the CRS system.
+ * Provides form interface for volunteers to register with username, password,
+ * name, and phone number.
+ *
+ * @author Sandesh Pokharel
+ * @student_id E2300576
+ * @version 1.0
+ */
 public class RegisterFrame extends JFrame implements ActionListener{
 
     private CRS crs;
@@ -16,6 +25,13 @@ public class RegisterFrame extends JFrame implements ActionListener{
     JPasswordField txt_password, txt_confirm;
     JButton btn_register, btn_cancel;
 
+    /**
+     * Constructor for RegisterFrame.
+     * Initializes the registration form with input fields and validation.
+     *
+     * @param crs the CRS system instance
+     * @param parent the parent JFrame (LoginPage)
+     */
     RegisterFrame(CRS crs, JFrame parent){
         this.crs = crs;
         this.parentFrame = parent;
@@ -95,6 +111,12 @@ public class RegisterFrame extends JFrame implements ActionListener{
         setVisible(true);
     }
 
+    /**
+     * Handles action events from buttons in the registration frame.
+     * Processes Register and Cancel button clicks.
+     *
+     * @param e the action event triggered by button click
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -109,6 +131,11 @@ public class RegisterFrame extends JFrame implements ActionListener{
         }
     }
 
+    /**
+     * Handles the registration of a new volunteer.
+     * Validates input fields including password matching and username uniqueness.
+     * Registers the volunteer in the CRS system if validation succeeds.
+     */
     private void handleRegister(){
         String username = txt_username.getText().trim();
         String password = new String(txt_password.getPassword());

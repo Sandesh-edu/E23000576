@@ -9,9 +9,13 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 /**
+ * Dashboard interface for volunteers in the CRS system.
+ * Provides access to view available trips, apply for trips, manage applications,
+ * update profile, upload documents, and save system data.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
+ * @version 1.0
  */
 public class VolunteerDashboard extends JFrame implements ActionListener{
 
@@ -25,6 +29,13 @@ public class VolunteerDashboard extends JFrame implements ActionListener{
     DefaultTableModel tableModel;
     boolean showingTrips = true;
 
+    /**
+     * Constructor for VolunteerDashboard.
+     * Initializes the dashboard with navigation buttons and trip information table.
+     *
+     * @param crs the CRS system instance
+     * @param volunteer the currently logged-in volunteer
+     */
     VolunteerDashboard(CRS crs, Volunteer volunteer){
         this.crs = crs;
         this.volunteer = volunteer;
@@ -112,6 +123,12 @@ public class VolunteerDashboard extends JFrame implements ActionListener{
         setVisible(true);
     }
 
+    /**
+     * Handles action events from dashboard buttons and components.
+     * Routes to appropriate action handlers based on user interaction.
+     *
+     * @param e the action event triggered by button click
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -141,6 +158,10 @@ public class VolunteerDashboard extends JFrame implements ActionListener{
         }
     }
 
+    /**
+     * Loads and displays all available relief trips.
+     * Populates the table with trip information including spaces available.
+     */
     private void loadAvailableTrips() {
         showingTrips = true;
         tableModel.setRowCount(0);
@@ -160,6 +181,10 @@ public class VolunteerDashboard extends JFrame implements ActionListener{
         }
     }
 
+    /**
+     * Loads and displays the volunteer's trip applications.
+     * Shows application status, remarks, and trip details.
+     */
     private void loadMyApplications() {
         showingTrips = false;
         tableModel.setRowCount(0);
@@ -178,6 +203,10 @@ public class VolunteerDashboard extends JFrame implements ActionListener{
         }
     }
 
+    /**
+     * Handles the volunteer's application to join a selected trip.
+     * Validates trip selection and existing applications before submitting.
+     */
     private void handleApplyForTrip() {
         if (!showingTrips) {
             JOptionPane.showMessageDialog(this,
