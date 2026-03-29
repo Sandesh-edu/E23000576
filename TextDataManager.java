@@ -5,12 +5,11 @@ import java.io.*;
 import java.time.LocalDate;
 
 /**
- * Manages saving and loading CRS data using TEXT files (CSV format)
+ * This Manages the saving and loading CRS data using TEXT files (CSV format)
  * No serialization required - human-readable files
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
- * @date March 2026
  */
 public class TextDataManager {
 
@@ -20,7 +19,7 @@ public class TextDataManager {
     private static final String DOCUMENTS_FILE = "documents.txt";
 
     /**
-     * Save all CRS data to text files
+     * This Save all the CRS data to text files
      * @param crs The CRS object to save
      * @return true if successful
      */
@@ -43,7 +42,7 @@ public class TextDataManager {
     }
 
     /**
-     * Load all CRS data from text files
+     * This static Method Loads all the CRS data from text files
      * @return CRS object with loaded data, or null if failed
      */
     public static CRS loadData() {
@@ -81,10 +80,9 @@ public class TextDataManager {
         return new File(USERS_FILE).exists();
     }
 
-    // ========== SAVE METHODS ==========
 
     /**
-     * Save users to text file
+     * This Saves user to text file
      */
     private static void saveUsers(CRS crs) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter(USERS_FILE));
@@ -114,7 +112,7 @@ public class TextDataManager {
     }
 
     /**
-     * Save trips to text file
+     * This Saves trip to text file
      */
     private static void saveTrips(CRS crs) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter(TRIPS_FILE));
@@ -134,7 +132,7 @@ public class TextDataManager {
     }
 
     /**
-     * Save applications to text file
+     * This Save applications to the text file
      */
     private static void saveApplications(CRS crs) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter(APPLICATIONS_FILE));
@@ -157,7 +155,7 @@ public class TextDataManager {
     }
 
     /**
-     * Save documents to text file
+     * This Saves documents to text file
      */
     private static void saveDocuments(CRS crs) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter(DOCUMENTS_FILE));
@@ -180,10 +178,9 @@ public class TextDataManager {
         System.out.println("  ✓ Saved " + count + " documents to " + DOCUMENTS_FILE);
     }
 
-    // ========== LOAD METHODS ==========
 
     /**
-     * Load users from text file
+     * This Loads the users data from text file
      */
     private static void loadUsers(CRS crs) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(USERS_FILE));
@@ -221,7 +218,7 @@ public class TextDataManager {
     }
 
     /**
-     * Load trips from text file
+     * This Loads the trips from text file
      */
     private static void loadTrips(CRS crs) throws IOException {
         File file = new File(TRIPS_FILE);
@@ -260,7 +257,7 @@ public class TextDataManager {
     }
 
     /**
-     * Load applications from text file
+     * This Load applications from text file
      */
     private static void loadApplications(CRS crs) throws IOException {
         File file = new File(APPLICATIONS_FILE);
@@ -309,7 +306,7 @@ public class TextDataManager {
     }
 
     /**
-     * Load documents from text file
+     * This Load documents from text file
      */
     private static void loadDocuments(CRS crs) throws IOException {
         File file = new File(DOCUMENTS_FILE);
@@ -348,7 +345,6 @@ public class TextDataManager {
         System.out.println("  ✓ Loaded " + count + " documents from " + DOCUMENTS_FILE);
     }
 
-    // ========== HELPER METHODS ==========
 
     /**
      * Find trip by ID

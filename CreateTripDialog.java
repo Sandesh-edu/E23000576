@@ -8,13 +8,12 @@ import java.awt.event.ActionListener;
 import java.time.LocalDate;
 
 /**
- * Dialog for creating new relief trips in the CRS system.
- * Allows staff members to create trips with description, location, date,
+ * This CreateTripDialog is for creating a new relief trips in the CRS system.
+ * This Allows staff members to create trips with description, location, date,
  * required volunteers, and crisis type.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
- * @version 1.0
  */
 public class CreateTripDialog extends JDialog implements ActionListener{
 
@@ -28,11 +27,11 @@ public class CreateTripDialog extends JDialog implements ActionListener{
 
     /**
      * Constructor for CreateTripDialog.
-     * Initializes the dialog with input fields for trip creation.
+     * This Initializes the dialog with input fields for trip creation.
      *
      * @param parent the parent JFrame
      * @param crs the CRS system instance
-     * @param staff the staff member creating the trip
+     * @param staff the staff member for creating the trip
      */
     CreateTripDialog(JFrame parent, CRS crs, Staff staff){
         super(parent, "Create New Trip", true);
@@ -112,8 +111,8 @@ public class CreateTripDialog extends JDialog implements ActionListener{
     }
 
     /**
-     * Handles action events from buttons in the dialog.
-     * Processes Create and Cancel button clicks.
+     * This Method Handles action events from buttons in the dialog.
+     * It Processes Create and Cancel button clicks.
      *
      * @param e the action event triggered by button click
      */
@@ -129,9 +128,9 @@ public class CreateTripDialog extends JDialog implements ActionListener{
     }
 
     /**
-     * Handles the creation of a new relief trip.
-     * Validates input fields and creates the trip in the CRS system.
-     * Performs date, volunteer count, and format validations.
+     * This Handles the creation of a new relief trip.
+     * It Validates all of the input fields and creates the trip in the CRS system.
+     * It Performs all the date, volunteer count, and format validations.
      */
     private void handleCreateTrip() {
         String description = txt_desc.getText().trim();

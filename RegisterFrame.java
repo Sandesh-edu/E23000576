@@ -7,13 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Registration frame for creating new volunteer accounts in the CRS system.
- * Provides form interface for volunteers to register with username, password,
+ * This is the Registration frame for creating a new volunteer accounts in the CRS system.
+ * It Provides the form interface for volunteers to register with username, password,
  * name, and phone number.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
- * @version 1.0
  */
 public class RegisterFrame extends JFrame implements ActionListener{
 
@@ -26,8 +25,8 @@ public class RegisterFrame extends JFrame implements ActionListener{
     JButton btn_register, btn_cancel;
 
     /**
-     * Constructor for RegisterFrame.
-     * Initializes the registration form with input fields and validation.
+     * It is the Constructor for RegisterFrame.
+     * This Initializes the registration form with input fields and validation.
      *
      * @param crs the CRS system instance
      * @param parent the parent JFrame (LoginPage)
@@ -112,8 +111,8 @@ public class RegisterFrame extends JFrame implements ActionListener{
     }
 
     /**
-     * Handles action events from buttons in the registration frame.
-     * Processes Register and Cancel button clicks.
+     * This method Handles action events from buttons in the registration frame.
+     * It Processes the Register and Cancel button clicks.
      *
      * @param e the action event triggered by button click
      */
@@ -132,9 +131,9 @@ public class RegisterFrame extends JFrame implements ActionListener{
     }
 
     /**
-     * Handles the registration of a new volunteer.
-     * Validates input fields including password matching and username uniqueness.
-     * Registers the volunteer in the CRS system if validation succeeds.
+     * This method Handles the registration of a new volunteer.
+     * It Validates the input fields including password matching and username uniqueness.
+     * It Registers the volunteer in the CRS system if the validation is successful.
      */
     private void handleRegister(){
         String username = txt_username.getText().trim();

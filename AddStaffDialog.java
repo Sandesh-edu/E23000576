@@ -8,13 +8,12 @@ import java.awt.event.ActionListener;
 import java.time.LocalDate;
 
 /**
- * Dialog for adding new staff members to the CRS system.
- * Provides a form interface for managers to enter staff details including
+ * This is the Dialog for adding new staff members to the CRS system.
+ * This Provides the form interface for managers to enter staff details including the
  * username, password, name, phone, and position.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
- * @version 1.0
  */
 public class AddStaffDialog extends JDialog implements ActionListener{
 
@@ -26,7 +25,7 @@ public class AddStaffDialog extends JDialog implements ActionListener{
 
     /**
      * Constructor for AddStaffDialog.
-     * Initializes the dialog window with input fields for staff details.
+     * This constructor Initializes the dialog window with the input fields for staff details.
      *
      * @param parent the parent JFrame
      * @param crs the CRS system instance
@@ -111,8 +110,8 @@ public class AddStaffDialog extends JDialog implements ActionListener{
 
 
     /**
-     * Handles action events from buttons in the dialog.
-     * Processes Add and Cancel button clicks.
+     * This Method Handles action events from buttons into the dialog.
+     * It Processes Add and Cancel button clicks.
      *
      * @param e the action event triggered by button click
      */
@@ -128,9 +127,9 @@ public class AddStaffDialog extends JDialog implements ActionListener{
     }
 
     /**
-     * Handles the addition of a new staff member.
-     * Validates input fields and adds the staff to the CRS system.
-     * Shows appropriate error or success messages.
+     * This Method Handles the addition of new staff member.
+     * It Validates the input fields and adds the staff to the CRS system.
+     * This also Shows appropriate error or success messages after completion.
      */
     private void handleAddStaff(){
 

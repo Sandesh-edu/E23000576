@@ -8,13 +8,12 @@ import java.awt.event.ActionListener;
 import java.time.LocalDate;
 
 /**
- * Dialog for volunteers to upload documents in the CRS system.
- * Allows selecting document type, expiry date, and file path.
- * Includes file browser functionality for selecting files.
+ * This is the Dialog for volunteers to upload their documents in the CRS system.
+ * This Allows selecting document type, expiry date, and file path.
+ * It Includes the file browser with functionality for selecting files.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
- * @version 1.0
  */
 public class UploadDocumentDialog extends JDialog implements ActionListener {
 
@@ -27,8 +26,8 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
     JButton btn_browse, btn_upload, btn_cancel;
 
     /**
-     * Constructor for UploadDocumentDialog.
-     * Initializes the dialog with document upload controls.
+     * This is the Constructor for UploadDocumentDialog.
+     * It Initializes the dialog with document upload controls.
      *
      * @param parent the parent JFrame
      * @param volunteer the volunteer uploading the document
@@ -106,8 +105,8 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
     }
 
     /**
-     * Handles action events from dialog components.
-     * Processes checkbox selection, file browsing, upload, and cancel actions.
+     * This Method Handles action events from dialog components.
+     * Ir Processes the checkbox selection, file browsing, upload, and cancel actions.
      *
      * @param e the action event triggered by user interaction
      */
@@ -127,8 +126,8 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
     }
 
     /**
-     * Opens a file chooser dialog for selecting document file.
-     * Updates the file path text field with selected file's absolute path.
+     * This Method Opens a file chooser dialog for selecting document file.
+     * It Updates the file path text field with selected file's absolute path.
      */
     private void browseFile() {
         JFileChooser fileChooser = new JFileChooser();
@@ -140,9 +139,9 @@ public class UploadDocumentDialog extends JDialog implements ActionListener {
     }
 
     /**
-     * Handles the upload of a document.
-     * Validates document type, expiry date, and file path.
-     * Creates a Document object and adds it to the volunteer's profile.
+     * This Method Handles the upload of a document.
+     * It Validates the document type, expiry date, and file path.
+     * This Creates a Document object and adds it to the volunteer's profile.
      */
     private void handleUpload() {
         Document.DOCType docType = (Document.DOCType) cmb_docType.getSelectedItem();

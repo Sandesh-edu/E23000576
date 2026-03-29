@@ -12,13 +12,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Login page for CRS system.
- * Provides user authentication interface for managers, staff, and volunteers.
- * Includes role selection and registration link for new volunteers.
+ * This is the Login page for CRS system.
+ * It Provides user authentication of the interface for managers, staff, and volunteers.
+ * It Includes role selection and registration link for new volunteers.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
- * @version 1.0
  */
 public class LoginPage extends JFrame implements ActionListener, MouseListener {
     private static CRS crs;
@@ -31,15 +30,15 @@ public class LoginPage extends JFrame implements ActionListener, MouseListener {
     JComboBox<String> cmb_role;
 
     /**
-     * Set CRS instance (called from Main)
+     * This Sets the CRS instance (called from Main)
      */
     public static void setCRS(CRS crsInstance) {
         crs = crsInstance;
     }
 
     /**
-     * Constructor for LoginPage.
-     * Initializes the login interface with username, password, and role selection.
+     * This is the Constructor for LoginPage.
+     * It Initializes the login interface with username, password, and role selection.
      */
     LoginPage() {
         setLayout(null);
@@ -106,8 +105,8 @@ public class LoginPage extends JFrame implements ActionListener, MouseListener {
     }
 
     /**
-     * Handles action events from login and cancel buttons.
-     * Validates credentials and routes to appropriate dashboard.
+     * This Method Handles the action events from login and cancel buttons.
+     * It Validates credentials and routes for appropriate dashboard.
      *
      * @param e the action event triggered by button click
      */
@@ -174,8 +173,8 @@ public class LoginPage extends JFrame implements ActionListener, MouseListener {
     }
 
     /**
-     * Handles mouse click events for registration link.
-     * Opens registration frame when clicked.
+     * This method Handles mouse click events for registration link.
+     * It Opens registration frame when clicked.
      *
      * @param e the mouse event
      */

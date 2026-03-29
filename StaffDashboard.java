@@ -9,13 +9,12 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 /**
- * Staff Dashboard for CRS system.
- * Provides staff members with trip creation, application management, and trip viewing capabilities.
- * Includes save/load data functionality.
+ * This is the Staff Dashboard for CRS system.
+ * This Provides staff members with trip creation, application management, and the trip viewing capabilities.
+ * This Includes the save/load data functionality.
  *
  * @author Sandesh Pokharel
  * @student_id E2300576
- * @version 1.0
  */
 public class StaffDashboard extends JFrame implements ActionListener{
 
@@ -29,8 +28,8 @@ public class StaffDashboard extends JFrame implements ActionListener{
     DefaultTableModel tableModel;
 
     /**
-     * Constructor for StaffDashboard.
-     * Initializes the dashboard with navigation buttons and trip information table.
+     * This is the Constructor for StaffDashboard.
+     * This Initializes the dashboard with navigation buttons and trip information table.
      *
      * @param crs the CRS system instance
      * @param staff the currently logged-in staff member
@@ -112,8 +111,8 @@ public class StaffDashboard extends JFrame implements ActionListener{
     }
 
     /**
-     * Handles action events from dashboard buttons.
-     * Routes to appropriate functions for trip management and application handling.
+     * This Handles the action events from dashboard buttons.
+     * It Routes to appropriate functions for trip management and application handling.
      *
      * @param e the action event triggered by button click
      */
@@ -169,7 +168,7 @@ public class StaffDashboard extends JFrame implements ActionListener{
     }
 
     /**
-     * Save data to text files
+     * This Method Saves data to text files
      */
     private void handleSaveData() {
         if (TextDataManager.saveData(crs)) {
